@@ -1,0 +1,230 @@
+.navbar-brand {
+  font-weight: bold;
+  padding-left: 1em;
+}
+
+.nav-link.active:hover {
+  color: black !important;
+}
+
+.nav-link.active {
+  font-size: large;
+  font-weight: 500;
+  padding-top: 10px;
+  margin-left: 2em;
+  color: white !important;
+}
+
+#f1 {
+  margin-top: 12px;
+  margin-bottom: auto;
+}
+
+#ikonice {
+  margin-left: 45em;
+}
+
+#nav {
+  background-color: #f77234 !important;
+  height: 6em;
+}
+.p-5 {
+  padding: 0% !important;
+}
+
+#prvi-tekst {
+  text-align: right !important;
+}
+
+.bg-body-tertiary {
+  --bs-bg-opacity: 0;
+}
+
+.ti {
+  padding-top: 120px;
+  padding-left: 60px;
+  text-align: left !important;
+  float: left;
+  width: 30%;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+#main-picture {
+  float: right;
+  width: 70%;
+}
+
+.fix {
+  padding-top: 120px;
+  text-align: right !important;
+}
+
+.main-text {
+  margin-right: 200em !important;
+  margin-left: 5em !important;
+}
+
+.row {
+  margin-top: 200px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 80%;
+  padding: 0%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kartica {
+  background-image: url(../img/abstract-textured-backgound.jpg);
+  font-weight: bolder !important;
+}
+
+.border-primary {
+  border-color: grey !important;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #f77234;
+  --bs-btn-border-color: ##f65b13;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #b63f07;
+  --bs-btn-hover-border-color: #b63f07;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #f77234;
+  --bs-btn-active-border-color: #f77234;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #f77234;
+  --bs-btn-disabled-border-color: #f77234;
+}
+
+.shadow-sm {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.jumbo-my {
+  margin-top: 20px;
+}
+
+.custom-text {
+  margin-top: 15px;
+  font-size: larger !important;
+  text-align: left;
+}
+
+.custom-list {
+  margin-top: 15px;
+  font-size: medium;
+  text-align: left;
+}
+
+.jmb {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.custom-button {
+  width: 200px;
+  height: 80px;
+}
+
+.custom-text a {
+  color: #f77234;
+}
+
+.custom-text a:hover {
+  color: #b63f07;
+}
+
+.karosel {
+  text-align: center;
+  width: 80em !important;
+  height: 40em !important;
+}
+
+.carousel-inner .carousel-item img {
+  margin: 0 auto;
+}
+
+.mapa {
+  text-align: left;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  margin-right: 10em;
+}
+
+.image-with-text {
+  margin-top: 2em;
+  display: flex;
+}
+
+.image-with-text p {
+  margin-top: 0 !important;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.li-price {
+  margin-bottom: 1em;
+}
+
+.pricing-h2 {
+  margin-bottom: 1em;
+  color: #f77234;
+  text-align: left;
+  font-weight: bold;
+}
+
+.price-strong {
+  color: #b63f07;
+}
+
+.price-strong:hover {
+  color: #f77234;
+}
+
+.price-strong:hover + .price-span {
+  color: #f77234;
+}
+
+.li-price:hover + .price-span {
+  color: purple;
+}
+
+.raspored {
+  margin-top: 2px;
+}
+
+.datum-text {
+  color: #b63f07;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.datum-text:hover {
+  color: #f77234;
+}
+
+.my-footer {
+  margin-top: 100px !important;
+}
