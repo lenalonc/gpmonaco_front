@@ -1,12 +1,20 @@
 import React from "react";
+import CreateRes from "./CreateReservation";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { isModalOpen, openModalHandler, closeModalHandler } = props;
+
   return (
     <nav id="nav" className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <ul className="spec" style={{listStyleType: "none"}}>
+        <ul className="spec" style={{ listStyleType: "none" }}>
           <li className="nav-item">
-              <img id="f1" src={require('../img/logoF1.png')} height="130px" alt="formula1 logo" />
+            <img
+              id="f1"
+              src={require("../img/logoF1.png")}
+              height="130px"
+              alt="formula1 logo"
+            />
           </li>
         </ul>
         <a className="navbar-brand" href="#">
@@ -29,25 +37,34 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" id="ikonice" className="nav-link text-secondary">
-                <img src={require('../img/telephone-01.png')} height="20px" alt="telefon" />
+              <a id="ikonice" className="nav-link text-secondary">
+                <img
+                  src={require("../img/telephone-01.png")}
+                  height="20px"
+                  alt="telefon"
+                />
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link text-secondary">
+              <a className="nav-link text-secondary"  style={{ cursor: "pointer" }}>
                 <img
-                  src={require('../img/ticket-perforated-01.png')}
+                  src={require("../img/ticket-perforated-01.png")}
                   height="25px"
                   alt="a"
                   style={{ marginLeft: "40px" }}
+                  onClick={openModalHandler}
                 />
               </a>
             </li>
           </ul>
         </div>
       </div>
+      {isModalOpen && (
+        <CreateRes closeModalHandler={closeModalHandler}></CreateRes>
+      )}
     </nav>
   );
 };
 
 export default Navbar;
+

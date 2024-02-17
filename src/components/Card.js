@@ -1,5 +1,5 @@
 const Card = (props) => {
-  const date = props.date;
+  const { date, openModalHandler } = props;
 
   return (
     <div className="col-md-4 mb-3">
@@ -29,7 +29,11 @@ const Card = (props) => {
           >
             Experience the Thrill of Monaco Grand Prix
           </p>
-          <button type="button" className="w-100 btn btn-lg btn-primary">
+          <button
+            type="button"
+            className="w-100 btn btn-lg btn-primary"
+            onClick={openModalHandler}
+          >
             <b>SAVE YOUR SPOT</b>
           </button>
         </div>

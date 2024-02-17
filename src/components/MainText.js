@@ -1,4 +1,6 @@
-const MainText = () => {
+const MainText = (props) => {
+  const { openModalHandler } = props;
+
   return (
     <div className="MainText">
       <div
@@ -124,6 +126,7 @@ const MainText = () => {
               fontSize: "large",
               fontWeight: 600,
             }}
+            onClick={openModalHandler}
           >
             <b>Book Now</b>
           </button>

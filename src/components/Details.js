@@ -18,7 +18,7 @@ const Details = () => {
         heart-stopping action, where the world's finest drivers will battle it
         out on one of the most challenging circuits in motorsport.
       </p>
-      <h3 style={{ color: "#f77234" }}>Race Schedule:</h3>
+      <h3 style={{ color: "#f77234", textAlign: "left" }}>Race Schedule:</h3>
       <ul className="custom-list" style={{ listStyleType: "none" }}>
         <li style={{ marginTop: "20px" }}>
           <strong className="datum-text">Friday, May 25th, 2024:</strong>

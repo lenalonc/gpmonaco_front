@@ -3,9 +3,13 @@ import Details from "./Details";
 import Footer from "./Footer";
 import MainText from "./MainText";
 import Pricing from "./Pricing";
+import CreateRes from "./CreateReservation";
+import { useState } from "react";
 
-const Main = () => {
+const Main = (props) => {
   const dates = ["MAY 25th", "MAY 26th", "MAY 27th"];
+
+  const { isModalOpen, openModalHandler, closeModalHandler } = props;
 
   return (
     <div>
@@ -40,11 +44,11 @@ const Main = () => {
 
       <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
         {dates.map((date, index) => (
-          <Card key={index} date={date} />
+          <Card key={index} date={date} openModalHandler={openModalHandler} />
         ))}
       </div>
       <div id="about">
-        <MainText />
+        <MainText openModalHandler={openModalHandler} />
       </div>
       <div id="pricing">
         <Pricing />
@@ -53,6 +57,13 @@ const Main = () => {
         <Details />
       </div>
       <Footer />
+
+      {isModalOpen && (
+        <CreateRes
+          dates={dates}
+          closeModalHandler={closeModalHandler}
+        ></CreateRes>
+      )}
     </div>
   );
 };
