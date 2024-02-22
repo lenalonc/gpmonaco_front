@@ -1,5 +1,27 @@
+import React, { useState, useEffect } from "react";
+import api from "../api/Api";
+
 const Pricing = () => {
   const prices = [800, 200, 500, 1200, 2500];
+  const [zones, setZones] = useState([]);
+
+  useEffect(() => {
+    const getZones = async () => {
+      try {
+        const response = await api.get("/zones");
+        setZones(response.data);
+      } catch (err) {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log(`Error: ${err.message}`);
+        }
+      }
+    };
+    getZones();
+  }, []);
 
   return (
     <div
@@ -52,74 +74,79 @@ const Pricing = () => {
           </li>
         </ul>
       </div>
+
       <div className="container">
         <div className="image-with-text">
           <img className="mapa" src={require("../img/mapa.jpg")} alt="map" />
           <div className="pricing">
             <h2 className="pricing-h2">Pricing:</h2>
             <div className="custom-list">
-              <ul style={{ listStyleType: "none" }}>
-                <li className="li-price">
-                  <strong className="price-strong">
-                    [1] Turn 1 Grandstand:
-                  </strong>{" "}
-                  from{" "}
-                  <span
-                    className="price-span"
-                    style={{ fontWeight: "bolder", fontSize: "large" }}
-                  >
-                    {prices[0]}&euro;
-                  </span>
-                </li>
-                <li className="li-price">
-                  <strong className="price-strong">
-                    [2, 3, 4, 5] General Admission:
-                  </strong>{" "}
-                  from{" "}
-                  <span
-                    className="price-span"
-                    style={{ fontWeight: "bolder", fontSize: "large" }}
-                  >
-                    {prices[1]}&euro;
-                  </span>
-                </li>
-                <li className="li-price">
-                  <strong className="price-strong">
-                    [6 - 11] Infield Grandstand:
-                  </strong>{" "}
-                  from{" "}
-                  <span
-                    className="price-span"
-                    style={{ fontWeight: "bolder", fontSize: "large" }}
-                  >
-                    {prices[2]}&euro;
-                  </span>
-                </li>
-                <li className="li-price">
-                  <strong className="price-strong">
-                    [12 - 16] Main Grandstand:
-                  </strong>{" "}
-                  from{" "}
-                  <span
-                    className="price-span"
-                    style={{ fontWeight: "bolder", fontSize: "large" }}
-                  >
-                    {prices[3]}&euro;
-                  </span>
-                </li>
-                <li className="li-price">
-                  <strong className="price-strong">
-                    [17, 18, 19] VIP Tribunes:
-                  </strong>{" "}
-                  from{" "}
-                  <span
-                    className="price-span"
-                    style={{ fontWeight: "bolder", fontSize: "large" }}
-                  >
-                    {prices[4]}&euro;
-                  </span>
-                </li>
-              </ul>
+              {zones.length > 0 && (
+                <>
+                  <ul style={{ listStyleType: "none" }}>
+                    <li className="li-price">
+                      <strong className="price-strong">
+                        [1] Turn 1 Grandstand:
+                      </strong>{" "}
+                      from{" "}
+                      <span
+                        className="price-span"
+                        style={{ fontWeight: "bolder", fontSize: "large" }}
+                      >
+                        {zones[3].features.price}&euro;
+                      </span>
+                    </li>
+                    <li className="li-price">
+                      <strong className="price-strong">
+                        [2, 3, 4, 5] General Admission:
+                      </strong>{" "}
+                      from{" "}
+                      <span
+                        className="price-span"
+                        style={{ fontWeight: "bolder", fontSize: "large" }}
+                      >
+                        {zones[0].features.price}&euro;
+                      </span>
+                    </li>
+                    <li className="li-price">
+                      <strong className="price-strong">
+                        [6 - 11] Infield Grandstand:
+                      </strong>{" "}
+                      from{" "}
+                      <span
+                        className="price-span"
+                        style={{ fontWeight: "bolder", fontSize: "large" }}
+                      >
+                        {zones[1].features.price}&euro;
+                      </span>
+                    </li>
+                    <li className="li-price">
+                      <strong className="price-strong">
+                        [12 - 16] Main Grandstand:
+                      </strong>{" "}
+                      from{" "}
+                      <span
+                        className="price-span"
+                        style={{ fontWeight: "bolder", fontSize: "large" }}
+                      >
+                        {zones[2].features.price}&euro;
+                      </span>
+                    </li>
+                    <li className="li-price">
+                      <strong className="price-strong">
+                        [17, 18, 19] VIP Tribunes:
+                      </strong>{" "}
+                      from{" "}
+                      <span
+                        className="price-span"
+                        style={{ fontWeight: "bolder", fontSize: "large" }}
+                      >
+                        {zones[4].features.price}&euro;
+                      </span>
+                    </li>
+                  </ul>
+                </>
+              )}
             </div>
           </div>
         </div>

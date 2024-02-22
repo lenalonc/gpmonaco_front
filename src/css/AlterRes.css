@@ -1,0 +1,104 @@
+.val-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.val-form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  background-image: url(../img/abstract-textured-backgound.jpg);
+  position: relative;
+}
+
+.val-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.val-form-header h2 {
+  margin: 0;
+}
+
+.val-form-body {
+  margin-bottom: 20px;
+}
+
+.val-form-footer {
+  text-align: right;
+}
+
+.val-close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.val-input {
+  padding: 0.3em 0.7em;
+  font-size: 16px;
+  margin-top: 2px;
+  margin-left: 20px;
+  width: 70%;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.val-form-body label {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.go {
+  background-color: white;
+  color: #b63f07;
+  width: 60px;
+  font-weight: 500;
+}
+
+.val-form-footer {
+  padding-right: 20px;
+}
+
+.modal-footer-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.dlt {
+  order: -1;
+}
+
+.update-footer {
+  margin-top: 60px;
+  border-top: 2px solid lightgray !important;
+}
+
+.no-btn {
+  padding: 10px 20px;
+  margin-left: 10px;
+}

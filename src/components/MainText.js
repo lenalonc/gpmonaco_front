@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const MainText = (props) => {
   const { openModalHandler } = props;
 
@@ -134,7 +136,10 @@ const MainText = (props) => {
         <p className="col-md-12 fs-4 custom-text" style={{ marginTop: "50px" }}>
           For more information, check{" "}
           <b>
-            <a href="#" style={{ fontSize: "large", fontStyle: "italic" }}>
+            <a
+              href="#details"
+              style={{ fontSize: "large", fontStyle: "italic" }}
+            >
               DETAILS
             </a>
           </b>
