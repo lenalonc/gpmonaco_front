@@ -1,5 +1,5 @@
 const SuccessModal = (props) => {
-  const { reservationToken, closeModalHandler } = props;
+  const { reservationToken, promoCode, closeModalHandler } = props;
 
   return (
     <div className="success-overlay">
@@ -31,6 +31,16 @@ const SuccessModal = (props) => {
           >
             Save this token in case you want to alter your reservation! You will
             need to provide the token and the email you put in.
+          </p>
+          <br></br>
+          <p
+            style={{
+              fontSize: 14,
+              marginBottom: 5,
+            }}
+          >
+            You can share this promo code to your friend so that they get extra
+            5% discount!: <span className="promo">{promoCode}</span>
           </p>
         </div>
         <div className="success-footer">

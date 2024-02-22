@@ -9,19 +9,30 @@ import api from "../api/Api";
 import SuccessModal from "./SuccessModal";
 import { ReservationContext } from "../context/ReservationContext";
 
-const Main = (props) => {
-  const { isModalOpen, openModalHandler, closeModalHandler } = props;
+const Main = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModalHandler = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModalHandler = () => {
+    resetTicketQuantities();
+    setIsModalOpen(false);
+  };
 
   const [dates, setD] = useState([]);
   const [minPrice, setMinPrice] = useState([]);
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [reservationToken, setReservationToken] = useState("");
+  const [promoCode, setPromoCode] = useState("");
 
   const { resetTicketQuantities } = useContext(ReservationContext);
 
-  const handleReservationSuccess = (token) => {
+  const handleReservationSuccess = (token, promoCode) => {
     setReservationToken(token);
+    setPromoCode(promoCode);
     setShowSuccessModal(true);
     closeModalHandler();
     resetTicketQuantities();
@@ -125,6 +136,7 @@ const Main = (props) => {
       {showSuccessModal && (
         <SuccessModal
           reservationToken={reservationToken}
+          promoCode={promoCode}
           closeModalHandler={() => setShowSuccessModal(false)}
         />
       )}

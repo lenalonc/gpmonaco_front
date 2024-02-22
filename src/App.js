@@ -6,9 +6,12 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "./css/Main.css";
 import "./css/Modal.css";
 import "./css/AlterRes.css";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import api from "./api/Api";
-import { ReservationContextProvider } from "./context/ReservationContext";
+import {
+  ReservationContext,
+  ReservationContextProvider,
+} from "./context/ReservationContext";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);

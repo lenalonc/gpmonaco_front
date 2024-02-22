@@ -16,17 +16,29 @@ const CreateRes = (props) => {
   const { getTickets, customer, resetTicketQuantities } =
     useContext(ReservationContext);
 
+  const [promoCode, setPromoCode] = useState("");
+
+  const handlePromoCodeChange = (event) => {
+    setPromoCode(event.target.value);
+  };
+
   const handleSaveChanges = async () => {
     try {
       const reservationData = {
         tickets: getTickets(),
         customer: customer,
+        promoCode: {
+          code: promoCode
+        },
       };
 
       const response = await api.post("/reservation", reservationData);
       console.log("Reservation saved successfully:", response.data);
 
-      handleReservationSuccess(response.data.token);
+      handleReservationSuccess(
+        response.data.token,
+        response.data.promoCode.code
+      );
     } catch (err) {
       if (err.response) {
         console.log(err.response.data);
@@ -115,6 +127,14 @@ const CreateRes = (props) => {
               <br />
               Catch the early bird discount! Book your seats by March 16th and
               get an extra 10% discount.
+              <p style={{ marginTop: 10, color: "#f77234" }}>
+                Enter your friend's promo code here:
+                <input
+                  className="input-promo"
+                  value={promoCode}
+                  onChange={handlePromoCodeChange}
+                ></input>{" "}
+              </p>
             </div>
           )}
 

@@ -107,24 +107,7 @@ const UpdateRes = (props) => {
   };
 
   const handleDelete = () => {
-    // const deleteRes = async () => {
-    //   try {
-    //     const response = await api.delete("/reservation/" + reservation.id);
-    //     console.log("Reservation deleted successfully");
-    //   } catch (err) {
-    //     if (err.response) {
-    //       console.log(err.response.data);
-    //       console.log(err.response.status);
-    //       console.log(err.response.headers);
-    //     } else {
-    //       console.log(`Error: ${err.message}`);
-    //     }
-    //   }
-    // };
-
     setDeletion(true);
-    // deleteRes();
-    // closeForm();
   };
 
   const handleSave = async () => {

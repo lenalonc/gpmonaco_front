@@ -9,7 +9,7 @@ const Total = () => {
 
   const tickets = useMemo(() => getTickets(), [getTickets]);
 
-  const [total, setTotal] = useState();
+  const [total, setTotal] = useState({ discount: 0, price: 0 });
 
   useEffect(() => {
     const reservationData = {
